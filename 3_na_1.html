@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btn1">B1</button>
+    <button type="button" id="btn2">B2</button>
+    <button type="button" id="btn3">B3</button>
+    <script>
+        const buttons = document.querySelectorAll("button");
+        const bt1 = document.getElementById("btn1");
+        const bt2 = document.getElementById("btn2");
+        const bt3 = document.getElementById("btn3");
+        
+        function changeColor(event) {
+            buttons.forEach(button => {
+                button.style.background = "";
+            });
+            
+            if (event.target === bt1) {
+                event.target.style.background = "rgb(14, 194, 134)";
+            } else if (event.target === bt2) {
+                event.target.style.background = "rgb(100, 15, 134)";
+            } else {
+                event.target.style.background = "rgb(15, 15, 4)";
+            }
+        }
+        
+        buttons.forEach(button => {
+            button.addEventListener("click", changeColor);
+        });
+    </script>
+</body>
+</html>
